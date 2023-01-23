@@ -1,0 +1,36 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/readingisgood
+    username: root
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  data:
+    mongodb:
+      user: urals
+      password: test
+      uri: mongodb://localhost:2717/inventory
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080
+
+order-service:
+  application:
+    threadpool:
+      name: ural
+      corePoolSize: 20
+      maximumPoolSize: 50
+      keepAliveTime: 60
+      maxWaitTime: 60
+      queueSize: 1000
+
+
