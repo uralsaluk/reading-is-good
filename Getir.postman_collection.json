@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\n    \"firstname\": \"ural\",\n  \"lastname\": \"saluk\",\n  \"email\": \"uralsaluk@gmail.com\",\n  \"password\": \"Test1234-\"\n}",
+					"raw": "{\n\n    \"firstname\": \"ural\",\n  \"lastname\": \"saluk\",\n  \"email\": \"adminural@gmail.com\",\n  \"password\": \"Test1234-\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,7 +53,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/user/api/v0/auth/register",
+					"raw": "http://localhost:8080/user/api/v0/auth/registerAdmin",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -64,7 +64,7 @@
 						"api",
 						"v0",
 						"auth",
-						"register"
+						"registerAdmin"
 					]
 				}
 			},
@@ -76,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/oauth2/authorize?response_type=code&client_id=couponclientapp&response_mode=form_post&redirect_uri=https://spring.io/auth&scope=read openid&nonce=asdasdasdasd",
+					"raw": "http://localhost:8080/oauth2/authorize?response_type=code&client_id=orderserviceapp&response_mode=form_post&redirect_uri=http://127.0.0.1:8080/user/api/v0/auth/test&scope=read openid&nonce=asdasdasdasd",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -93,7 +93,7 @@
 						},
 						{
 							"key": "client_id",
-							"value": "couponclientapp"
+							"value": "orderserviceapp"
 						},
 						{
 							"key": "response_mode",
@@ -101,7 +101,7 @@
 						},
 						{
 							"key": "redirect_uri",
-							"value": "https://spring.io/auth"
+							"value": "http://127.0.0.1:8080/user/api/v0/auth/test"
 						},
 						{
 							"key": "scope",
@@ -376,7 +376,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\n\"phone\":\"5326966373\",\n\"mail\": \"uralsaluk@gasdasdsad.com\",\n\"orderedProductList\": [\n\n    {\n  \"productId\":4,\n  \"quantity\":1       \n    },\n\n    {\n  \"productId\":3,\n  \"quantity\":1       \n    },\n\n    {\n  \"productId\":2,\n  \"quantity\":1     \n    }\n\n  \n\n\n] \n\n\n}",
+					"raw": "{\n\n\"phone\":\"5326966373\",\n\"mail\": \"test\",\n\"orderedProductList\": [\n\n    {\n  \"productId\":4,\n  \"quantity\":-5      \n    },\n\n    {\n  \"productId\":3,\n  \"quantity\":3     \n    },\n\n    {\n  \"productId\":2,\n  \"quantity\":1     \n    }\n\n  \n\n\n] \n\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -410,7 +410,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbnVyYWxAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ0ODMxOTYsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDUwMTE5NiwiaWF0IjoxNjc0NDgzMTk2fQ.sJ-oBUlDmgPI2pbG9S4dPpne6vM2b5tNi89zjgA6B8Bs6Li8hPnM7wOKlAcLrYFEsSNgxAVmNnKAUCLbzVTnTBiP4aAvn3YONyxslszquSMuIlXFI4qGotkd7-p40Gxo-OoNNIX4OgGyHgGsj4AuVqEn5K0uxMv339XKqWfEyXWeyqeImrmYDGUBzjTuSpjd2_wgX1v96sNi6tseuaXfeiKnhDZtxjIDl70pZGlOFGCOSqCw6PQ4b4Au-n-JHKWmYvyet7Xizk3eKB8csDrqnXkwI-QIhPe9S1Za-JXZcVHA1Hx8q3vO5B6ZaBuw2a1tESuvvrK3jNTyPNgh4f0Qbw",
+							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1cmFsc2FsdWtAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ1NTAwNDUsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDU2ODA0NSwiaWF0IjoxNjc0NTUwMDQ1fQ.Az2_RZNAxeBUcH5FKB5tyaeYWcv0sOPA4JvwjOAHf39lPe_8ZEJoX8wbDylNWs5Xs4LYPT_ic5xXk0XdfKYiTx4s1PpGM48F1kih2zuCZCiHwLbiutAuLYdUrsZxbxn4ap37iqm75f7Ggc1dtTG1bpHQzoOwoa-u3wAZS7qlK6hg2VY3tBDaDjA3vmgB0_3-nS_odnwbbOdu7EkfkdDfPIC_6Q1dRmpPV9YlZYzJcX9GW6K2oQTrZOmzkH9ij5LNuI_HNWW-FZq45oj3KVTVw692VZEixB7PerYkJT37iimBzjxvryniX_Ftx0SvOwV3Ka33b5lSXExABviFF6VufQ",
 							"type": "string"
 						}
 					]
@@ -454,7 +454,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbnVyYWxAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ0ODMxOTYsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDUwMTE5NiwiaWF0IjoxNjc0NDgzMTk2fQ.sJ-oBUlDmgPI2pbG9S4dPpne6vM2b5tNi89zjgA6B8Bs6Li8hPnM7wOKlAcLrYFEsSNgxAVmNnKAUCLbzVTnTBiP4aAvn3YONyxslszquSMuIlXFI4qGotkd7-p40Gxo-OoNNIX4OgGyHgGsj4AuVqEn5K0uxMv339XKqWfEyXWeyqeImrmYDGUBzjTuSpjd2_wgX1v96sNi6tseuaXfeiKnhDZtxjIDl70pZGlOFGCOSqCw6PQ4b4Au-n-JHKWmYvyet7Xizk3eKB8csDrqnXkwI-QIhPe9S1Za-JXZcVHA1Hx8q3vO5B6ZaBuw2a1tESuvvrK3jNTyPNgh4f0Qbw",
+							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1cmFsc2FsdWtAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ1NTAwNDUsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDU2ODA0NSwiaWF0IjoxNjc0NTUwMDQ1fQ.Az2_RZNAxeBUcH5FKB5tyaeYWcv0sOPA4JvwjOAHf39lPe_8ZEJoX8wbDylNWs5Xs4LYPT_ic5xXk0XdfKYiTx4s1PpGM48F1kih2zuCZCiHwLbiutAuLYdUrsZxbxn4ap37iqm75f7Ggc1dtTG1bpHQzoOwoa-u3wAZS7qlK6hg2VY3tBDaDjA3vmgB0_3-nS_odnwbbOdu7EkfkdDfPIC_6Q1dRmpPV9YlZYzJcX9GW6K2oQTrZOmzkH9ij5LNuI_HNWW-FZq45oj3KVTVw692VZEixB7PerYkJT37iimBzjxvryniX_Ftx0SvOwV3Ka33b5lSXExABviFF6VufQ",
 							"type": "string"
 						}
 					]
@@ -507,7 +507,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbnVyYWxAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ0ODMxOTYsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDUwMTE5NiwiaWF0IjoxNjc0NDgzMTk2fQ.sJ-oBUlDmgPI2pbG9S4dPpne6vM2b5tNi89zjgA6B8Bs6Li8hPnM7wOKlAcLrYFEsSNgxAVmNnKAUCLbzVTnTBiP4aAvn3YONyxslszquSMuIlXFI4qGotkd7-p40Gxo-OoNNIX4OgGyHgGsj4AuVqEn5K0uxMv339XKqWfEyXWeyqeImrmYDGUBzjTuSpjd2_wgX1v96sNi6tseuaXfeiKnhDZtxjIDl70pZGlOFGCOSqCw6PQ4b4Au-n-JHKWmYvyet7Xizk3eKB8csDrqnXkwI-QIhPe9S1Za-JXZcVHA1Hx8q3vO5B6ZaBuw2a1tESuvvrK3jNTyPNgh4f0Qbw",
+							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1cmFsc2FsdWtAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ1NTAwNDUsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDU2ODA0NSwiaWF0IjoxNjc0NTUwMDQ1fQ.Az2_RZNAxeBUcH5FKB5tyaeYWcv0sOPA4JvwjOAHf39lPe_8ZEJoX8wbDylNWs5Xs4LYPT_ic5xXk0XdfKYiTx4s1PpGM48F1kih2zuCZCiHwLbiutAuLYdUrsZxbxn4ap37iqm75f7Ggc1dtTG1bpHQzoOwoa-u3wAZS7qlK6hg2VY3tBDaDjA3vmgB0_3-nS_odnwbbOdu7EkfkdDfPIC_6Q1dRmpPV9YlZYzJcX9GW6K2oQTrZOmzkH9ij5LNuI_HNWW-FZq45oj3KVTVw692VZEixB7PerYkJT37iimBzjxvryniX_Ftx0SvOwV3Ka33b5lSXExABviFF6VufQ",
 							"type": "string"
 						}
 					]
@@ -524,7 +524,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8090/api/v0/order?startDate=26.08.1994&endDate=24.01.2023",
+					"raw": "http://localhost:8090/api/v0/customer/getOrders?userName=uralsaluk@gmail.com&limit=5&offset=0",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -533,16 +533,21 @@
 					"path": [
 						"api",
 						"v0",
-						"order"
+						"customer",
+						"getOrders"
 					],
 					"query": [
 						{
-							"key": "startDate",
-							"value": "26.08.1994"
+							"key": "userName",
+							"value": "uralsaluk@gmail.com"
 						},
 						{
-							"key": "endDate",
-							"value": "24.01.2023"
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "0"
 						}
 					]
 				}
@@ -560,7 +565,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1cmFsc2FsdWtAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQzMTA4NTUsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDMyODg1NSwiaWF0IjoxNjc0MzEwODU1fQ.nGp_Bi_vLK846rrrHid1yp3dIuRePsAJgrTBRuHmbyZZjcrza79axDQeS21pD2EmLayETkCRK-cix26WmovE7GeDyoYlZJqcuSTLDKmbxihI4Q2Nb9a-XAweWO1GxOSOO3QfYQC7cTalQFOEIBsxA6ETiGKXRx68z8n7Vg7j5FtuV8AFIjmzQNycr3-ha9bDENumSOMV0YAQ1XiUE2QRmhHqg4iSb3L-W01Az8IcirTBS9AtC3IfrzjcckgHk93kupM3aJ5jzSY7WPjSImTk_olXDVOUO2VvHosO7xp9twsPmb3eLbOJ4KsaSowP_qYIevi2VehaOs3_2yXJdeDTwg",
+							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1cmFsc2FsdWtAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ1NTAwNDUsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDU2ODA0NSwiaWF0IjoxNjc0NTUwMDQ1fQ.Az2_RZNAxeBUcH5FKB5tyaeYWcv0sOPA4JvwjOAHf39lPe_8ZEJoX8wbDylNWs5Xs4LYPT_ic5xXk0XdfKYiTx4s1PpGM48F1kih2zuCZCiHwLbiutAuLYdUrsZxbxn4ap37iqm75f7Ggc1dtTG1bpHQzoOwoa-u3wAZS7qlK6hg2VY3tBDaDjA3vmgB0_3-nS_odnwbbOdu7EkfkdDfPIC_6Q1dRmpPV9YlZYzJcX9GW6K2oQTrZOmzkH9ij5LNuI_HNWW-FZq45oj3KVTVw692VZEixB7PerYkJT37iimBzjxvryniX_Ftx0SvOwV3Ka33b5lSXExABviFF6VufQ",
 							"type": "string"
 						}
 					]
@@ -577,7 +582,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8090/api/v0/statistics",
+					"raw": "http://localhost:8090/api/v0/statistics?userName=uralsaluk@gmail.com&year=2023",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -587,6 +592,16 @@
 						"api",
 						"v0",
 						"statistics"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "uralsaluk@gmail.com"
+						},
+						{
+							"key": "year",
+							"value": "2023"
+						}
 					]
 				}
 			},
