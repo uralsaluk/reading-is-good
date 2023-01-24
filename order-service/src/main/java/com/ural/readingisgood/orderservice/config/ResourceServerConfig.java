@@ -55,16 +55,19 @@ public class ResourceServerConfig {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwtToAuthorityConverter());
 
+        //confirm-email?{id:.+}&{token:.+}
         http
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/api/v0/order/**", "/api/v0/statistics/**")
+                .antMatchers(HttpMethod.GET, "/api/v0/order.{startDate:.+}&{endDate:.+}")
+                .access("  hasAuthority('read') and  hasRole('CUSTOMER') ")
+                .antMatchers(HttpMethod.GET, "/api/v0/order/*", "/api/v0/statistics/**")
                 .access("  hasAuthority('read') and  hasRole('ADMIN') ")
                 .antMatchers(HttpMethod.POST, "/api/v0/book").access("  hasAuthority('read') and  hasRole('ADMIN') ")
                 .antMatchers(HttpMethod.PUT, "/api/v0/book/**").access("  hasAuthority('read') and  hasRole('ADMIN') ")
                 .antMatchers("/api/v0/**")
                 .access("  hasAuthority('read') and  hasRole('CUSTOMER') ")
                 .antMatchers(
-                        "/v2/api-docs",
+                        "/v3/api-docs",
                         "/configuration/ui",
                         "/swagger-resources/**",
                         "/configuration/security",

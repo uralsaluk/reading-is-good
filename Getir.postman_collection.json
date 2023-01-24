@@ -497,6 +497,59 @@
 			"response": []
 		},
 		{
+			"name": "Get Orders By Username",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ4NXQjUzI1NiI6IlpMZlE1TXZFRVBVMGhnZGxjZS1GM0xWUFc5OFhzZWt2cnlXN2NPNkpUUjAiLCJraWQiOiJqd3Rpc2Nvb2wiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbnVyYWxAZ21haWwuY29tIiwiYXVkIjoib3JkZXJzZXJ2aWNlYXBwIiwiZmlyc3ROYW1lIjoidXJhbCIsImxhc3ROYW1lIjoic2FsdWsiLCJuYmYiOjE2NzQ0ODMxOTYsInNjb3BlIjpbInJlYWQiLCJvcGVuaWQiXSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY3NDUwMTE5NiwiaWF0IjoxNjc0NDgzMTk2fQ.sJ-oBUlDmgPI2pbG9S4dPpne6vM2b5tNi89zjgA6B8Bs6Li8hPnM7wOKlAcLrYFEsSNgxAVmNnKAUCLbzVTnTBiP4aAvn3YONyxslszquSMuIlXFI4qGotkd7-p40Gxo-OoNNIX4OgGyHgGsj4AuVqEn5K0uxMv339XKqWfEyXWeyqeImrmYDGUBzjTuSpjd2_wgX1v96sNi6tseuaXfeiKnhDZtxjIDl70pZGlOFGCOSqCw6PQ4b4Au-n-JHKWmYvyet7Xizk3eKB8csDrqnXkwI-QIhPe9S1Za-JXZcVHA1Hx8q3vO5B6ZaBuw2a1tESuvvrK3jNTyPNgh4f0Qbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v0/order?startDate=26.08.1994&endDate=24.01.2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v0",
+						"order"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "26.08.1994"
+						},
+						{
+							"key": "endDate",
+							"value": "24.01.2023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Monthly Statistics",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
